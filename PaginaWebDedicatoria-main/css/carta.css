@@ -1,0 +1,261 @@
+/* --- CONFIGURACIÓN GENERAL Y ESTÉTICA --- */
+:root {
+    --bg-color: #fbf7f4;
+    --primary-color: #b83b5e;
+    --secondary-color: #e84545;
+    --text-color: #4a4242;
+    --accent-soft: #f9ebea;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-image: url('../IMAGEN/fondo.avif');
+    /* Subimos un nivel para buscar la imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.letters-section {
+            width: 90%;
+            max-width: 950px;
+            padding: 60px 0 20px 0;
+            text-align: center;
+        }
+
+        .letters-section h2 {
+            font-family: 'Satisfy', cursive;
+            font-style: italic;
+            color: #801326; /* Tu color vino */
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .letters-subtitle {
+            color: #666666;
+            font-size: 1.05rem;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        /* --- REJILLA DE CARTAS --- */
+        .letters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 40px;
+            padding: 20px;
+            justify-items: center;
+        }
+
+        /* --- DISEÑO DEL SOBRE INTERACTIVO --- */
+        .envelope-wrapper {
+            background-color: #fff;
+            width: 250px;
+            height: 180px;
+            border-radius: 0 0 16px 16px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(128, 19, 38, 0.08);
+            border: 1px solid rgba(128, 19, 38, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .envelope-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 0 0 16px 16px;
+            background: linear-gradient(35deg, #fff 48%, #fbf7f4 50%, #fff 52%);
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.02);
+            z-index: 3;
+        }
+
+        /* Solapa superior color vino */
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 125px solid transparent;
+            border-right: 125px solid transparent;
+            border-top: 90px solid #801326; /* Color vino */
+            transform-origin: top;
+            transition: transform 0.4s ease, z-index 0.2s;
+            z-index: 4;
+        }
+
+        .envelope-seal {
+            position: absolute;
+            top: 75px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            font-size: 1.4rem;
+            color: #e03a57; /* Rojo suave de los destaques */
+            transition: transform 0.3s ease;
+        }
+
+        /* --- LA CARTA OCULTA DENTRO --- */
+        .letter-preview {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            background: #fffdf9;
+            border: 1px dashed #eada6d;
+            border-radius: 8px;
+            padding: 15px;
+            z-index: 2;
+            transition: transform 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letter-preview h3 {
+            margin: 0;
+            font-family: 'Patrick Hand SC', sans-serif;
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        /* --- ANIMACIONES EN HOVER --- */
+        .envelope-wrapper:hover {
+            transform: translateY(-5px);
+        }
+
+        .envelope-wrapper:hover .envelope-flap {
+            transform: rotateX(180deg);
+            z-index: 1;
+        }
+
+        .envelope-wrapper:hover .envelope-seal {
+            transform: translateX(-50%) scale(0.8) translateY(-20px);
+            opacity: 0.5;
+        }
+
+        .envelope-wrapper:hover .letter-preview {
+            transform: translateY(-40px);
+        }
+
+        /* --- VENTANA MODAL (CARTA ABIERTA COMPLETA) --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(42, 34, 34, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-card {
+            background: #fffdf9;
+            max-width: 500px;
+            width: 85%;
+            padding: 40px 35px;
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            border: 1px solid #f3e1dc;
+            position: relative;
+            animation: openLetter 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        @keyframes openLetter {
+            from { opacity: 0; transform: scale(0.85) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-card h2 {
+            font-family: 'Satisfy', cursive;
+            color: #801326;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 1px dashed #f3e1dc;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .modal-card p {
+            font-family: 'Patrick Hand SC', sans-serif;
+            line-height: 1.7;
+            color: #4a4242;
+            font-size: 1.3rem;
+            white-space: pre-line;
+            text-align: left;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: #bbb;
+            cursor: pointer;
+            transition: color 0.2s;
+            user-select: none;
+        }
+
+        .close-modal:hover {
+            color: #801326;
+        }
+
+        /* --- ESTILO DEL BOTÓN DE RETORNO LIBRE --- */
+        .botones-retorno-libre {
+            margin: 40px 0 60px 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .btn-return-libre {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: transparent;
+            color: #801326;
+            text-decoration: none;
+            font-family: 'Shantell Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 12px 28px;
+            border: 2px solid #801326;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(128, 19, 38, 0.05);
+        }
+
+        .btn-return-libre:hover {
+            background-color: #801326;
+            color: #ffffff;
+            box-shadow: 0 8px 20px rgba(128, 19, 38, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .return-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-return-libre:hover .return-arrow {
+            transform: translateX(-4px);
+        }
+
+        .btn-return-libre:active {
+            transform: translateY(-1px);
+        }

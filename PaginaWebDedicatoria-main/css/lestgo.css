@@ -1,0 +1,260 @@
+/* Reseteo general e integración del fondo texturizado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* IMPORTANTE: Asegúrate de que la ruta a tu imagen de papel arrugado sea la correcta */
+    background-image: url('../IMAGEN/fondo.avif'); /* Subimos un nivel para buscar la imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Shantell Sans', sans-serif;
+    color: #4a4a4a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- ESTILOS DE LA BARRA DE NAVEGACIÓN --- */
+/* ==========================================
+   ESTILOS BASE (Tu diseño para Escritorio)
+   ========================================== */
+/* ==========================================
+   ESTILOS BASE (Tu diseño para Escritorio)
+   ========================================== */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.9); /* Sutil transparencia blanca */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 25px;
+}
+
+.logo {
+    font-family: 'Chelsea Market', sans-serif;
+    font-size: 1.5rem;
+    color: #801326; /* Color vino romántico */
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+    color: #801326;
+    font-weight: 600;
+}
+
+/* ==========================================
+   MODIFICACIÓN PARA CELULARES
+   ========================================== */
+@media (max-width: 768px) {
+    /* Forzamos a que sea una barra blanca sólida y fija en móviles */
+    .main-header {
+        position: fixed;
+        background-color: #ffffff;
+        width: 100%;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar {
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    /* TRUCO: Creamos el icono de 3 líneas con CSS puro (Simula la imagen image_08aec6.png) */
+    .navbar::after {
+        content: '';
+        display: block;
+        width: 22px;
+        height: 3px;
+        background-color: #333; /* Línea central */
+        box-shadow: 0 -7px 0 #333, 0 7px 0 #333; /* Línea superior e inferior */
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    /* Modificamos los enlaces para que se vuelven el menú del lado */
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 0; /* Controlamos el espacio con padding en los enlaces */
+        
+        /* Posicionamiento oculto a la derecha */
+        position: fixed;
+        top: 60px; /* Se despliega justo debajo de la barra */
+        right: -100%; /* Totalmente escondido a la derecha */
+        width: 65%; /* Ocupa más de la mitad de la pantalla del cel */
+        height: calc(100vh - 60px); /* Ocupa el resto del alto de la pantalla */
+        
+        background-color: #ffffff;
+        padding: 20px;
+        box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.05);
+        transition: right 0.3s ease-in-out; /* Transición suave al salir */
+    }
+
+    /* EFECTO DE DESPLIEGUE: Al tocar la barra, el menú sale del lado */
+    .navbar:hover .nav-links,
+    .navbar:active .nav-links {
+        right: 0; /* Se desliza hacia adentro */
+    }
+
+    /* Estilos estéticos para los enlaces en vertical dentro del celular */
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 10px;
+        font-size: 1rem;
+        border-bottom: 1px solid #f5f5f5; /* Línea divisoria sutil */
+    }
+}
+
+/* --- CUERPO PRINCIPAL Y TARJETA (HERO) --- */
+.hero {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* La tarjeta blanca limpia y con bordes súper redondeados */
+.hero-container {
+    background-color: #ffffff;
+    max-width: 750px;
+    width: 100%;
+    border-radius: 30px; /* Bordes suaves característicos del diseño */
+    padding: 50px 40px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.welcome-title {
+   font-family: 'Satisfy', cursive;
+    font-size: 5rem;
+    color: #000000;
+    font-weight: 1000;
+    margin-bottom: -60px;
+}
+ h2 {
+    font-family: 'Satisfy', cursive;
+    font-size: 5rem;
+    color: #800020;
+    font-weight: 1000;
+    margin-top: 0;
+  }
+
+.hero-text-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555555;
+    margin-bottom: 20px;
+    
+}
+
+.highlight {
+    display: block;
+    font-size: 1.25rem;
+    color: #e03a57; /* El color rojo suave que resalta tu frase */
+    font-weight: 700;
+    margin: 25px 0;
+}
+
+/* Línea divisoria punteada sutil */
+.divider-line {
+    border-top: 1px dashed #dddddd;
+    margin: 30px auto;
+    width: 90%;
+}
+
+/* Caja del pensamiento o cita final */
+.quote-box {
+    
+    font-size: 1.25rem;
+    color: #666666;
+    line-height: 1.6;
+    padding: 0 20px;
+    
+}
+
+/* --- ESTILO DEL PIE DE PÁGINA --- */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #777777;
+    width: 100%;
+}
+/* Contenedor del botón dentro de la tarjeta */
+.card-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px; /* Espacio limpio después de la cita */
+}
+
+/* Estilo del botón RETURN */
+.btn-return {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #801326; /* Color vino de tu paleta */
+    text-decoration: none;
+    font-family: 'Shantell Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 10px 24px;
+    border: 2px solid #801326; /* Borde elegante del mismo color */
+    border-radius: 50px; /* Bordes perfectamente redondeados */
+    transition: all 0.3s ease;
+}
+
+/* Efecto Hover (Al pasar el mouse) */
+.btn-return:hover {
+    background-color: #801326; /* Se rellena de vino */
+    color: #ffffff; /* El texto cambia a blanco */
+    box-shadow: 0 6px 15px rgba(128, 19, 38, 0.2);
+    transform: translateY(-2px); /* Pequeño salto flotante */
+}
+
+/* Animación sutil de la flecha de regreso */
+.return-arrow {
+    transition: transform 0.3s ease;
+}
+
+.btn-return:hover .return-arrow {
+    transform: translateX(-4px); /* La flecha se mueve suavemente a la izquierda */
+}
+
+/* Efecto al presionar */
+.btn-return:active {
+    transform: translateY(-1px);
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestro Frasco de Recuerdos</title>
+    <link rel="stylesheet" href="css/frasco.css">
+        
+</head>
+<body>
+
+    <div class="memory-jar-section">
+        <h2>Nuestro Frasco de Recuerdos</h2>
+        <p class="jar-instruction">Haz clic en el frasco para descubrir una nota especial.</p>
+        
+        <div class="jar-container">
+            <!-- Frasco Interactivo -->
+            <div class="jar" id="memoryJar">
+                <div class="jar-lid"></div>
+                <div class="jar-neck"></div>
+                <div class="jar-body">
+                    <div class="heart h1">❤</div>
+                    <div class="heart h2">❤</div>
+                    <div class="heart h3">❤</div>
+                </div>
+            </div>
+            
+            <!-- Ventana emergente con el Recuerdo -->
+            <div class="memory-popup" id="memoryPopup">
+                <span class="close-popup" id="closePopup">&times;</span>
+                <div class="popup-content" id="popupText">
+                    <!-- El texto dinámico de JS se insertará aquí -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/frasco.js"></script>
+
+</body>
+</html>

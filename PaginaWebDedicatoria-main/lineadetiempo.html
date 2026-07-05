@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Línea de Tiempo</title>
+    <link rel="stylesheet" href="css/lineadetiempo.css">
+</head>
+<body>
+
+    <section class="timeline-section">
+        <h2>Nuestra Historia Paso a Paso</h2>
+        <p class="timeline-subtitle">Un recorrido por los momentos más lindos que definieron nuestro camino.</p>
+
+        <div class="timeline-container">
+            
+            <!-- Hito 1 (Izquierda) -->
+            <div class="timeline-item left">
+                <div class="avatar-indicator">
+                    <!-- Cambia 'IMAGEN/gato.gif' por la ruta real de tu GIF de gatito -->
+                    <img src="IMAGEN/gatito.gif" alt="Gatito Animado">
+                </div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Nivel 1 - Fecha de Inicio</span>
+                    <h3>El Primer "Hola"</h3>
+                    <p>Todo comenzó con un mensaje inesperado que cambió el rumbo de mis días. Quién diría todo lo que vendría después.</p>
+                    <img src="IMAGEN/primer_hola.jpg" alt="Recuerdo 1" class="timeline-img" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- Hito 2 (Derecha) -->
+            <div class="timeline-item right">
+                <div class="avatar-indicator">
+                    <!-- Cambia 'IMAGEN/conejo.gif' por la ruta real de tu GIF de conejito -->
+                    <img src="IMAGEN/conejo.gif" alt="Conejo Animado">
+                </div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Nivel 2 - Primera Salida</span>
+                    <h3>Nuestra Primera Cita</h3>
+                    <p>Los nervios estaban al máximo, pero compartir risas cara a cara hizo que todo se sintiera increíblemente natural y mágico.</p>
+                    <img src="IMAGEN/primera_cita.jpg" alt="Recuerdo 2" class="timeline-img" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- Hito 3 (Izquierda) -->
+            <div class="timeline-item left">
+                <div class="avatar-indicator">
+                    <img src="IMAGEN/gato.gif" alt="Gatito Animado">
+                </div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Nivel 3 - Un día especial</span>
+                    <h3>Un Detalle Inolvidable</h3>
+                    <p>Ciertas tardes se guardan para siempre en el corazón, no por lo que hicimos, sino por lo felices que fuimos simplemente estando juntos.</p>
+                    <img src="IMAGEN/recuerdo_especial.jpg" alt="Recuerdo 3" class="timeline-img" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <!-- Hito 4 (Derecha) -->
+            <div class="timeline-item right">
+                <div class="avatar-indicator">
+                    <img src="IMAGEN/conejo.gif" alt="Conejo Animado">
+                </div>
+                <div class="timeline-content">
+                    <span class="timeline-date">Nivel 4 - Actualidad</span>
+                    <h3>El Hoy y el Siempre</h3>
+                    <p>Y aquí estamos, cada mes más unidos, superando todo y construyendo una historia hermosa de la cual estoy sumamente orgulloso/a.</p>
+                    <img src="IMAGEN/actualidad.jpg" alt="Recuerdo 4" class="timeline-img" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // --- EFECTO DE APARICIÓN AL HACER SCROLL (Scroll Reveal) ---
+        const items = document.querySelectorAll('.timeline-item');
+
+        const verificarScroll = () => {
+            const TriggerBottom = (window.innerHeight / 5) * 4;
+
+            items.forEach(item => {
+                const itemTop = item.getBoundingClientRect().top;
+
+                if (itemTop < TriggerBottom) {
+                    item.classList.add('show');
+                } else {
+                    item.classList.remove('show'); // Opcional: remueve si quieres que vuelva a ocultarse al subir
+                }
+            });
+        };
+
+        // Escuchar el evento de scroll en la ventana
+        window.addEventListener('scroll', verificarScroll);
+        
+        // Ejecutar una vez al cargar por si hay elementos ya visibles en la pantalla de inicio
+        window.addEventListener('load', verificarScroll);
+    </script>
+
+</body>
+</html>

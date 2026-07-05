@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Cartas para Ti</title>
+    <link rel="stylesheet" href="css/carta.css">
+</head>
+<body>
+
+    <section class="letters-section">
+        <h2>Cartas por cada mes juntos</h2>
+        <p class="letters-subtitle">Pasa el mouse sobre un sobre para abrirlo y haz clic para leer lo que guardo para ti.</p>
+
+        <div class="letters-grid">
+            
+            <!-- Sobre 1 -->
+            <div class="envelope-wrapper" onclick="abrirCarta(1)">
+                <div class="envelope-flap"></div>
+                <div class="envelope-seal">❤</div>
+                <div class="letter-preview">
+                    <h3>Mes #1</h3>
+                </div>
+            </div>
+
+            <!-- Sobre 2 -->
+            <div class="envelope-wrapper" onclick="abrirCarta(2)">
+                <div class="envelope-flap"></div>
+                <div class="envelope-seal">❤</div>
+                <div class="letter-preview">
+                    <h3>Mes #2</h3>
+                </div>
+            </div>
+
+            <!-- Sobre 3 -->
+            <div class="envelope-wrapper" onclick="abrirCarta(3)">
+                <div class="envelope-flap"></div>
+                <div class="envelope-seal">❤</div>
+                <div class="letter-preview">
+                    <h3>Cuando extrañes</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BOTÓN DE RETORNO ABAJO DEL TODO (FUERA DE CUADROS) -->
+    <div class="botones-retorno-libre">
+        <a href="lestgo.html" class="btn-return-libre">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="return-arrow"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            <span>RETURN</span>
+        </a>
+    </div>
+
+    <!-- Modal que despliega la carta completa -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2 id="modalTitle">Título de la Carta</h2>
+            <p id="modalBody">Contenido de la carta...</p>
+        </div>
+    </div>
+
+    <script src="js/cartas.js"></script> 
+</body>
+</html>

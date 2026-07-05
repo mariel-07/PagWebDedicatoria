@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Sale de la carpeta css para buscar el fondo en la raíz */
+    background-image: url("../IMAGEN/fondo.avif"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: "Shantell Sans", cursive;
+}
+
+/* Capa oscura opcional para legibilidad si la usaste en las otras */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+
+.container {
+    text-align: center;
+    max-width: 600px;
+    padding: 20px;
+    z-index: 1;
+}
+
+.gif-arriba {
+    width: 150px;
+    max-width: 80%;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 3rem;
+    color: #800020;
+    font-weight: 620;
+    text-shadow: 2px 5px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 26px;
+    min-width: 165px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.xoxo-special {
+    background-color: #d3d3d3;
+    border: 3px solid #800020;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}

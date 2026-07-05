@@ -1,0 +1,172 @@
+/* Importación de fuentes (opcional si ya están en el HTML) */
+@import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300..800&family=Gochi+Hand&display=swap');
+
+body {
+    margin: 0;
+    background-image: url("../IMAGEN/fondo.avif"); /* Subimos un nivel para buscar la imagen */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Shantell Sans", cursive;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 140px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: -10px;
+    font-size: 3rem;
+    color: #800020;
+    font-weight: 620;
+    text-shadow: 2px 5px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #D3D3D3;
+    margin-top: -20px;
+    font-family: "Gochi Hand", cursive;
+    letter-spacing: 3px;
+}
+
+/* Grilla de imágenes */
+.botones-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    justify-items: center;
+    margin-top: 30px;
+}
+
+.img-btn img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    border-radius: 35px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    transition: 0.3s;
+    border: 8px solid #800020;
+}
+
+.img-btn:hover img {
+    transform: scale(1.05);
+}
+
+.botones {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    min-width: 165px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #000;
+}
+
+.xoxo-special {
+    background-color: #d3d3d3;
+    border: 3px solid #800020;
+}
+
+/* Botón vertical lateral */
+.letgo-btn {
+    position: fixed;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    color: black;
+    border: 3px solid #800020;
+    padding: 60px 12px;
+    border-radius: 15px 0 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 2px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    box-shadow: -4px 6px 12px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 10;
+}
+
+.letgo-btn:hover {
+    background: #800020;
+    color: white;
+}
+
+/* Asegura que los botones abajo se alineen bien juntos si es necesario */
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espacio entre RETURN y LET'S GO */
+  margin-top: 35px;
+  flex-wrap: wrap;
+}
+
+/* Diseño del Nuevo Botón LET'S GO */
+.btn-lets-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #801326; /* Color vino idéntico al borde de tus tarjetas */
+  color: #ffffff !important; /* Texto blanco obligatorio */
+  text-decoration: none; /* Quita el subrayado de enlace */
+  font-family: 'Shantell Sans', 'Chelsea Market', sans-serif; /* Usa tus fuentes cargadas */
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 12px 28px;
+  border-radius: 50px; /* Bordes completamente redondeados */
+  box-shadow: 0 6px 15px rgba(128, 19, 38, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* Efectos Hover (Al pasar el cursor) */
+.btn-lets-go:hover {
+  background-color: #991b31; /* Un tono un poquito más vivo */
+  transform: translateY(-3px); /* Eleva el botón suavemente */
+  box-shadow: 0 10px 20px rgba(128, 19, 38, 0.35);
+}
+
+/* Efecto al hacer clic */
+.btn-lets-go:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(128, 19, 38, 0.2);
+}
+
+/* Animación sutil de la flecha */
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-lets-go:hover .arrow-icon {
+  transform: translateX(4px); /* Desplaza la flecha a la derecha en hover */
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reproductor 3D Estilizado</title>
+    <link rel="stylesheet" href="css/music.css">
+  </head>
+  <body>
+    <div id="bg-overlay"></div>
+
+    <div class="player-container">
+        <!-- Bloque Izquierdo: Información de reproducción -->
+        <div class="playlist-header">
+            <h2 id="current-title">Cargando...</h2>
+            <p id="current-artist">Selecciona una canción</p>
+        </div>
+
+        <!-- Bloque Derecho: Reproductor 3D -->
+        <div class="carousel-section">
+            <div class="carousel" id="carousel">
+                
+                <div class="card"
+                     data-bg="rgba(11, 44, 77, 0.4)"
+                     data-title="Daylight"
+                     data-artist="Taylor Swift"
+                     data-src="MUSICA/Taylor Swift - Daylight (Official Audio).mp3">
+                    <img src="IMAGEN/images.jpg" alt="Cover Daylight" />
+                    <div class="card-content">
+                        <h3>Daylight</h3>
+                        <p>Taylor Swift</p>
+                    </div>
+                </div>
+                
+                <div class="card"
+                     data-bg="rgba(77, 20, 20, 0.4)"
+                     data-title="Love Story"
+                     data-artist="Taylor Swift"
+                     data-src="MUSICA/Taylor Swift - Love Story (Taylor's Version)sub. español letra lyrics.mp3">
+                    <img src="IMAGEN/lovestory.jpg" alt="Cover Love Story" />
+                    <div class="card-content">
+                        <h3>Love Story</h3>
+                        <p>Taylor Swift</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                     data-bg="rgba(20, 77, 44, 0.4)"
+                     data-title="So High School"
+                     data-artist="Taylor Swift"
+                     data-src="MUSICA/Taylor Swift - So High School (Sub. Español).mp3">
+                    <img src="IMAGEN/sohight.jpg" alt="Cover So High School" />
+                    <div class="card-content">
+                        <h3>So High School</h3>
+                        <p>Taylor Swift</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Caja de mandos integrada abajo del carrusel -->
+            <div class="controls-box">
+                <div class="progress-container" id="progress-clickable">
+                    <div id="progress-bar"></div>
+                </div>
+                <div class="time-info">
+                    <span id="current-time">0:00</span>
+                    <span id="total-duration">0:00</span>
+                </div>
+                <div class="controls">
+                    <button id="prev">◁</button>
+                    <button id="play" class="play-btn">▶</button>
+                    <button id="next">▷</button>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <!-- Contenedor del botón inferior -->
+    <div class="btn-container">
+        <a href="lestgo.html" class="btn xoxo-special">RETURN</a>
+    </div>
+
+    <audio id="main-audio"></audio>
+    
+    <!-- Tu archivo JS de lógica del reproductor -->
+    <script src="js/music.js"></script>
+</body>
+</html>
