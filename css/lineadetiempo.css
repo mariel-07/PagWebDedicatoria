@@ -109,6 +109,56 @@ body {
     z-index: 1;
     transition: background-color 0.3s;
 }
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.content-move {
+    transform: translateY(-40px);
+    /* 🔼 sube textos + botones */
+}
+
+.xoxo-special {
+    background-color: #d3d3d3;
+    color: #000000;
+    border: 3px solid #800020;
+    font-family: "Shantell Sans", cursive;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 10px 22px;
+    min-width: 165px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    border-radius: 35px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:link,
+.btn:visited {
+    color: #000000;
+    text-decoration: none;
+}
+
+
+
+.btn-container {
+    margin-top: -50px;
+    /* separa el botón de la línea */
+}
+
 
 .right::after {
     left: -10px;
