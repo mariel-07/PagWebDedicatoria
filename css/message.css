@@ -1,66 +1,165 @@
-/* --- Importación de Fuentes --- */
-@import url('https://fonts.googleapis.com/css2?family=Boogaloo&family=Chelsea+Market&family=Gochi+Hand&family=Mansalva&family=Merienda:wght@300..900&family=Patrick+Hand+SC&family=Satisfy&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Gochi+Hand&family=Satisfy&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Patrick+Hand+SC&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Mansalva&display=swap');
 
-/* --- Estilos Generales --- */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Shantell Sans', cursive; /* Fuente base */
-    background: url("../IMAGEN/fondo.avif") no-repeat center center fixed;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
+        body {
+            font-family: 'Satisfy', cursive;
+            font-family: "Shantell Sans", cursive;
+            font-family: "Gochi Hand", cursive;
+            font-family: "Chelsea Market", system-ui;
+            font-family: "Patrick Hand SC", cursive;
+            font-family: "Boogaloo", sans-serif;
+            font-family: "Merienda", cursive;
+            font-family: "Mansalva", sans-serif;
 
-/* --- Tipografía y Títulos --- */
-h1 { font-family: "Shantell Sans", cursive; font-size: 3rem; color: #800020; margin: 20px 60px; text-shadow: 2px 5px 6px rgba(0,0,0,0.2); }
-h4 { font-family: "Mansalva", sans-serif; font-size: 4rem; color: #800020; text-align: center; margin: -15px 0; }
-.subtitle { font-family: "Gochi Hand", cursive; font-size: 1.8rem; margin: 0 60px; letter-spacing: 4px; }
-h3 { font-family: "Gochi Hand", cursive; font-size: 1.5rem; color: #808080; margin: 0 60px; text-align: right; }
+        }
 
-/* --- Elementos de Diseño --- */
-.linea-roja {
-    width: 90%; /* Adaptable */
-    max-width: 1000px;
-    height: 4px;
-    border-bottom: 3px dashed #800020;
-    margin: 10px auto;
-}
 
-.btn {
-    padding: 10px 22px;
-    min-width: 165px;
-    border-radius: 35px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    text-decoration: none;
-    color: #000;
-    display: inline-block;
-    text-align: center;
-}
+        body {
+            margin: 0;
+            background-image: url("../IMAGEN/fondo.avif");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
-.botones {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap; /* Permite que los botones bajen si no caben */
-    padding: 20px;
-}
+        .subtitle {
+            font-size: 1.8rem;
+            color: #000000;
+            margin-top: -50px;
+            font-family: "Gochi Hand", cursive;
+            letter-spacing: 4px;
+            text-align: left;
+            /* ← izquierda */
 
-/* --- Adaptabilidad (Media Queries) --- */
-@media (max-width: 768px) {
-    h1 { font-size: 2rem; margin: 20px; }
-    h4 { font-size: 2.5rem; }
-    .subtitle, h3 { margin: 10px 20px; font-size: 1.2rem; }
-    
-    .btn-container {
-        margin-top: 20px;
-    }
-}
+            margin-left: 60px;
+            /* separación del borde */
+            margin-right: 60px;
+            /* aire a la derecha */
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        h1 {
+            margin-top: 20px;
+            font-family: "Shantell Sans", cursive;
+            font-size: 3rem;
+            /* más chico (antes 5rem) */
+            color: #800020;
+            font-weight: 620;
+            /* más ancho/grueso */
+            text-shadow: 2px 5px 6px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            /* ← aquí */
+            margin-left: 60px;
+            /* separación del borde */
+            margin-right: 60px;
+            /* aire a la derecha */
+        }
+
+        h4 {
+            margin-top: -15px;
+            font-family: "Mansalva", sans-serif;
+            font-size: 4rem;
+            color: #800020;
+            font-weight: 1000;
+            text-shadow: 2px 5px 6px rgba(0, 0, 0, 0.2);
+
+            text-align: center;
+        }
+
+        h3 {
+            margin-top: -15px;
+            font-size: 1.5rem;
+            color: #808080;
+            font-family: "Gochi Hand", cursive;
+            letter-spacing: 4px;
+            /* ← aquí */
+            margin-left: 30px;
+            margin-left: 60px;
+            /* separación del borde */
+            margin-right: 60px;
+            /* aire a la derecha */
+            text-align: right;
+        }
+
+        .linea-roja {
+            width: 2000px;
+            height: 4px;
+            border-bottom: 3px dashed #800020;
+            margin: 6px auto 0;
+            margin-top: -20px;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .content-move {
+            transform: translateY(-40px);
+            /* 🔼 sube textos + botones */
+        }
+
+        .xoxo-special {
+            background-color: #d3d3d3;
+            color: #000000;
+            border: 3px solid #800020;
+            font-family: "Shantell Sans", cursive;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            padding: 10px 22px;
+            min-width: 165px;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+
+            border-radius: 35px;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:link,
+        .btn:visited {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .boton-abajo {
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: -80px;
+            /* ↓ antes 40px, ahora más arriba */
+            margin-bottom: 20px;
+            /* espacio inferior */
+        }
+        @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
