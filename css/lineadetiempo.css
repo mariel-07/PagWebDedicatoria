@@ -121,12 +121,31 @@ body {
     /* 🔼 sube textos + botones */
 }
 
+/* --- Ajuste específico para tu botón especial --- */
 .xoxo-special {
     background-color: #d3d3d3;
     color: #000000;
     border: 3px solid #800020;
     font-family: "Shantell Sans", cursive;
+    padding: 12px 30px;
+    border-radius: 35px;
+    text-decoration: none;
+    transition: 0.3s;
 }
+
+.xoxo-special:hover {
+    background-color: #800020;
+    color: white;
+    transform: scale(1.05);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px; /* Separación de la línea de tiempo */
+    margin-bottom: 20px;
+}
+
 
 .btn {
     display: flex;
@@ -153,11 +172,6 @@ body {
 }
 
 
-
-.btn-container {
-    margin-top: -50px;
-    /* separa el botón de la línea */
-}
 
 
 .right::after {
