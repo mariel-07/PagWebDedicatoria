@@ -11,7 +11,7 @@
             },
             3: {
                 titulo: "Nuestro Tercer Mes Juntos",
-                texto: "Sé que a veces la distancia o la rutina pueden hacer que nos hagamos falta, pero quiero que recuerdes algo: cada pensamiento mío te pertenece.\n\nSi miras esta pantalla, es un pedacito de todo el amor que te tengo guardado. No importa la hora ni el día, siempre estoy contigo de corazón."
+                texto: "Mi amor \n\nHoy me detuve a pensar en todo lo que hemos recorrido y me sorprende lo mucho que ha pasado en tan poco tiempo. Aunque empezamos aquel 23 de diciembre y tuvimos ese paréntesis en marzo, siento que el tiempo separados solo nos sirvió para darnos cuenta de lo mucho que queríamos estar juntos.Hoy celebramos nuestros 3 meses, y aunque la fecha oficial de aniversario sea el día 09, para mí cada día a tu lado desde que regresamos es un regalo. Agradezco que la vida nos haya dado esta segunda oportunidad, porque estar contigo ahora se siente mucho más sólido, más real y, sobre todo, más especial.Gracias por volver a elegirme, por las risas, por la complicidad y por construir este presente conmigo. Estoy muy feliz de estar aquí, celebrando nuestro camino juntos."
             }
         };
 
